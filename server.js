@@ -11,7 +11,7 @@ app.use((req, res, next) => {
   if(env === "production"){
     if (req.headers.host.slice(0, 4) === "www.") {
       var newHost = req.headers.host.slice(4);
-      res.redirect(301, req.protocol + "://" + newHost + req.originalUrl);
+      res.redirect(301, "https://" + newHost + req.originalUrl);
     }
     else {
       next();
