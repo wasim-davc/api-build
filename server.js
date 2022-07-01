@@ -3,12 +3,8 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const compression = require('compression');
-const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
 
 app.use(compression());
-
-//https redirect
-app.use(redirectToHTTPS([/localhost:(\d{4})/], 301));
 
 //static path
 app.use(express.static(path.join(__dirname, 'build')));
