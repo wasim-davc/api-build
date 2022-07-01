@@ -13,9 +13,6 @@ app.use((req, res, next) => {
       var newHost = req.headers.host.slice(4);
       res.redirect(301, req.protocol + "://" + newHost + req.originalUrl);
     }
-    else if(req.secure !== true ){
-      res.redirect(301, `https://${req.headers.host}${req.url}`);    
-    } 
     else {
       next();
     }
