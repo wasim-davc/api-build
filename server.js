@@ -9,6 +9,23 @@ app.use(compression());
 //static path
 app.use(express.static(path.join(__dirname, 'build')));
 
+//https redirect
+app.enable('trust proxy')
+app.use((req, res, next) => {
+  req.secure ? next() : res.redirect('https://' + req.headers.host + req.url)
+})
+
+//www redirect
+function redirectWwwTraffic(req, res, next) {
+  if (req.headers.host.slice(0, 4) === "www.") {
+    var newHost = req.headers.host.slice(4);
+    return res.redirect(301, req.protocol + "://" + newHost + req.originalUrl);
+  }
+  next();
+}
+app.use(redirectWwwTraffic);
+
+
 //server the index page
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
