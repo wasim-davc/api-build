@@ -3,27 +3,15 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const compression = require('compression');
+const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
 
 app.use(compression());
 
+//https redirect
+app.use(redirectToHTTPS([/localhost:(\d{4})/], 301));
+
 //static path
 app.use(express.static(path.join(__dirname, 'build')));
-
-//https redirect
-app.enable('trust proxy')
-app.use((req, res, next) => {
-  req.secure ? next() : res.redirect('https://' + req.headers.host + req.url)
-})
-
-//www redirect
-app.get('/*', function(req, res, next) {
-  if (req.headers.host.match(/^www/) !== null ) {
-    res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url);
-  } else {
-    next();     
-  }
-})
-
 
 //server the index page
 app.get('/*', function (req, res) {
