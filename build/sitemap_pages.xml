@@ -9,27 +9,24 @@
 	  <loc>https://movies-king.herokuapp.com/</loc>
 	</url>
 	<url>
-	  <loc>https://movies-king.herokuapp.com/category/dual-audio</loc>
+	  <loc>https://movies-king.herokuapp.com/category/korean-series</loc>
 	</url>
 	<url>
-	  <loc>https://movies-king.herokuapp.com/category/2021-movies</loc>
+	  <loc>https://movies-king.herokuapp.com/category/dual-audio-movies</loc>
+	</url>
+	<url>
+	  <loc>https://movies-king.herokuapp.com/category/web-series</loc>
+	</url>
+	<url>
+	  <loc>https://movies-king.herokuapp.com/hindi-fan-dubbed</loc>
+	</url>
+	<url>
+	  <loc>https://movies-king.herokuapp.com/category/hindi-tv-show</loc>
 	</url>
 	<url>
 	  <loc>https://movies-king.herokuapp.com/category/480p-movies</loc>
 	</url>
 	<url>
 	  <loc>https://movies-king.herokuapp.com/category/720p-movies</loc>
-	</url>
-	<url>
-	  <loc>https://movies-king.herokuapp.com/category/1080p-movies</loc>
-	</url>
-	<url>
-	  <loc>https://movies-king.herokuapp.com/category/netflix</loc>
-	</url>
-	<url>
-	  <loc>https://movies-king.herokuapp.com/category/web-series</loc>
-	</url>
-	<url>
-	  <loc>https://movies-king.herokuapp.com/category/adult-movies</loc>
 	</url>
 </urlset>
